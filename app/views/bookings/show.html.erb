@@ -1,0 +1,17 @@
+
+<div class="d-flex justify-content-between align-items-center border-bottom">
+  <div>
+    <h1> My retro-rents </h1>
+  </div>
+  <div>
+    <h2><%= @game.name %></h2>
+    <p><%= @game.console %></p>
+    <p>£<%= @game.price_per_day %></p>
+
+   <p> <%= link_to "retro-rent-another", bookings_path(@booking) %> </p>
+
+  </div>
+  <div class="d-flex">
+    <p><%= link_to 'Back', root_path %></p>
+  </div>
+</div>
