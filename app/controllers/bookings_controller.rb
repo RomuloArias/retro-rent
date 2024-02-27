@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  after_update :update_price
 
   def index
     @bookings = current_user.bookings
@@ -38,7 +39,14 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     # No need for app/views/restaurants/update.html.erb
-    redirect_to bookings_path, notice: 'Updated successfully'
+    redirect_to bookings_path, notice: 'Price & booking updated successfully'
+  end
+
+  def update_price
+    @game = Game.find(params[:game_id])
+    @booking.game = @game
+    @booking_duration = (@booking.end_date-@booking.start_date).to_i
+    @booking.total_price = @booking_duration*@game.price_per_day
   end
 
   def destroy
@@ -50,7 +58,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-      params.require(:booking).permit(:start_date, :end_date)
+      params.require(:booking).permit(:start_date, :end_date, :total_price)
   end
 
 end

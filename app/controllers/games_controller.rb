@@ -3,10 +3,11 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show, :destroy]
 
   def index
-    @games = current_user.games
-    @games = Game.all
+    # @games = current_user.games
     if params[:query].present?
       @games = @games.searching(params[:query])
+    else
+      @games = Game.all
     end
 
   end
