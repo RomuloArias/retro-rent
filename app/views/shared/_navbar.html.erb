@@ -11,10 +11,15 @@
   </div>
 
   <div class="search-container">
-    <form class="form-inline">
-      <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-      <button type="submit"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
-    </form>
+
+    <%= form_with url: root_path, method: :get, class: "form-inline" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+     <button type="submit"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+    <% end %>
   </div>
 
   <div class="navbar-end">
