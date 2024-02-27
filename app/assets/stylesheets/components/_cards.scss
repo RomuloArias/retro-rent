@@ -1,0 +1,25 @@
+
+@mixin flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid;
+  border-radius: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow:hidden;
+}
+
+.game-cards{
+@include flex-container;
+gap: 1rem;
+position:absolute;
+}
+
+.card-image {
+border-top-right-radius: 30px;
+border-top-left-radius: 30px;
+}
