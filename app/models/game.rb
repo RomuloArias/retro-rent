@@ -1,5 +1,5 @@
 class Game < ApplicationRecord
-
+  after_update :update_bookings
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :bookings, dependent: :destroy
@@ -41,4 +41,11 @@ class Game < ApplicationRecord
   using: {
     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }
+  private
+
+  def update_bookings
+    bookings.each do |booking|
+      booking.update(total_price: booking.booking_duration*price_per_day)
+    end
+  end
 end

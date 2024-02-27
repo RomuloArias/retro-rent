@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-  after_update :update_price
 
   def index
     @bookings = current_user.bookings.sort_by(&:updated_at).reverse
@@ -21,8 +20,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @game = Game.find(params[:game_id])
     @booking.game = @game
-    @booking_duration = (@booking.end_date-@booking.start_date).to_i
-    @booking.total_price = @booking_duration*@game.price_per_day
+
+    @booking.total_price = @booking.booking_duration*@game.price_per_day
 
     if @booking.save
       redirect_to bookings_path, notice: 'retro-rent-booking was successful!'
@@ -38,15 +37,9 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
+    @booking.update(total_price: @booking.booking_duration*@booking.game.price_per_day)
     # No need for app/views/restaurants/update.html.erb
     redirect_to bookings_path, notice: 'Price & booking updated successfully'
-  end
-
-  def update_price
-    @game = Game.find(params[:game_id])
-    @booking.game = @game
-    @booking_duration = (@booking.end_date-@booking.start_date).to_i
-    @booking.total_price = @booking_duration*@game.price_per_day
   end
 
   def destroy
@@ -58,7 +51,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-      params.require(:booking).permit(:start_date, :end_date, :total_price)
+      params.require(:booking).permit(:start_date, :end_date)
   end
 
 end
