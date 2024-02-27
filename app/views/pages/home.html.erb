@@ -1,4 +1,4 @@
-<div class=container>
+<div class= "container">
   <h2 class = "p-3">Newly Added</h2>
     <div class= "game-cards p-3">
       <% @games.each do |game| %>
@@ -8,8 +8,8 @@
                 <p><%=game.genre %></p>
                 <p> <%=game.name %>, <%=game.console%></p>
                  <p> £<%=game.price_per_day %>/day</p>
-                 <%# <%= class ="booking-btn" %>
-              </div>
+                  <%= link_to 'Rent', root_path, class: 'rent-button' %>
+                </div>
              </div>
           <% end %>
     </div>
