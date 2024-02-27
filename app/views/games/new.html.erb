@@ -1,0 +1,12 @@
+<h1>Add a new game</h1>
+
+<div>
+  <%= simple_form_for(@game) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :console, collection: ["Atari", "Dreamcast", "Game Boy", "Game Boy Advance", "Game Boy Colour", "Game Cube", "Game Gear", "Master System", "Mega Drive",
+    "N64", "NES", "PS1", "PS2", "Sega Saturn", "SNES", "Xbox"] %>
+    <%= f.input :genre, collection: ["Action", "Adventure", "Arcade", "Combat", "Platform", "Puzzle", "Strategy"] %>
+    <%= f.input :year %>
+    <%= f.submit %>
+  <% end %>
+</div>
