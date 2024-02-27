@@ -6,13 +6,11 @@
       <%= f.input :start_date, label: 'From:', placeholder: "Start Date", as: :string, input_html: { data: {datepicker_target: "start"}}, wrapper_html: { class: 'd-flex align-items-center justify-content-start gap-2'}, label_html: {class: 'd-flex gap-1 w-25'} %>
       <%= f.input :end_date, label: 'To:  ', placeholder: "End Date", as: :string, input_html: { data: {datepicker_target: "end"}}, wrapper_html: { class: 'd-flex align-items-center justify-content-start gap-2'}, label_html: {class: 'd-flex gap-1 w-25'} %>
       <%= f.submit 'Update booking', class: "btn btn-secondary" %>
-    <% end %>
-    <div>
-        <%= link_to "Delete",
+      <%= link_to "Delete",
         booking_path(@booking),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
-      </div>
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-secondary" %>
+    <% end %>
+
   </div>
 
 </div>
