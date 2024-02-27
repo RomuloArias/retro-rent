@@ -1,0 +1,15 @@
+<div class="container">
+<h1>All Bookings</h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <% if booking.confirmed %>
+      <span class="badge bg-success">confirmed</span>
+    <% else %>
+      <span class="badge bg-warning">pending</span>
+    <% end %>
+    <li> Price £<%= booking.total_price %></li>
+    <li>Rental dates: <%= booking.start_date %> - <%= booking.end_date %></li>
+  <% end %>
+</ul>
+</div>
