@@ -2,6 +2,7 @@
     <ul>
       <% @bookings.each do |booking| %>
     <div class="card-product">
+      <%= image_tag "image.png"%>
       <div class="card-product-infos">
         <%= booking.game.name %>
         <% if booking.confirmed %>
@@ -17,4 +18,4 @@
     </ul>
 
 
-<p><%= link_to 'New retro-rent booking', games_path %></p>
+<p><%= link_to 'New retro-rent booking', games_path, class: 'btn btn-ghost' %></p>
