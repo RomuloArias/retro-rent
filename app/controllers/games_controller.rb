@@ -1,4 +1,6 @@
 class GamesController < ApplicationController
+  before_action :set_game, only: [:show, :destroy]
+
   def index
     @games = Game.all
   end
@@ -14,31 +16,21 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    @game = Game.find(params[:id])
     @game.user = current_user
     @game.destroy
     redirect_to user_path(@user), status: :see_other
-
   end
 
   def show
-    @game = Game.find(params[:id])
   end
 
-
-
-
   private
+
+  def set_game
+    @game = Game.find(params[:id])
+  end
 
   def game_params
     params.require(:game).permit(:name, :console, :genre, :year)
   end
-
-
-
-
-
-
-
-
 end
