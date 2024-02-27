@@ -1,9 +1,9 @@
 <div class=container>
-<h2 class = "p-3">Newly Added</h2>
-   <div class= "game-cards p-3">
-     <% @pages.each do |page| %>
+  <h2 class = "p-3">Newly Added</h2>
+  <div class= "game-cards p-3">
+    <% @pages.each do |page| %>
       <div class= "card">
-      <img src="https://via.placeholder.com/350x250"  class="card-image" alt="Card Image" />
+        <img src="https://via.placeholder.com/350x250"  class="card-image" alt="Card Image" />
         <div class= "card-content m-3">
           <p><%=page.genre %></p>
           <p> <%=page.name %>, <%=page.console%></p>
@@ -11,6 +11,6 @@
           <%# <%= link_to boookings_path, class ="booking-btn" %>
         </div>
       </div>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 </div>
