@@ -23,6 +23,8 @@ class GamesController < ApplicationController
   end
 
   def show
+    @reviews = @game.reviews
+    @review = Review.new
   end
 
   private

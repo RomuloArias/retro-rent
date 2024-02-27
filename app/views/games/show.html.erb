@@ -55,7 +55,21 @@
     </form>
 
   </div>
-
+  <div>
+    <p><strong>Reviews</strong></p>
+    <ul class="list-group">
+      <% @game.reviews.each do |review| %>
+      <li class="list-group-item"><%= review.content %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div>
+    <h2>New review</h2>
+    <%= simple_form_for [@game, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
 
 
