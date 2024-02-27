@@ -1,0 +1,10 @@
+@mixin flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.game-cards{
+@include flex-container;
+
+}

@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h2>Newly Added</h2>
+  <div class= background>
+   <div class= "game-cards">
+     <% @pages.each do |page| %>
+      <div class= "cards">
+        <div class= "card-content">
+          <h6><%=page.genre %></h6>
+          <p> <%=page.name %>, <%=page.console%></p>
+          <p> £<%=page.price_per_day %>/day</p>
+          <%# <%= link_to boookings_path, class ="booking-btn" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
