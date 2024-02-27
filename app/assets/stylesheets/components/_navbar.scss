@@ -1,24 +1,40 @@
 .navbar {
   background-color: #f8f8f8;
   border-bottom: 1px solid #e7e7e7;
-  padding: 0.5rem 1rem;
-}
-  .navbar-brand {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+
+  .navbar-brand, .navbar-end {
     .navbar-item {
-      font-size: 1.5rem;
+      font-size: 24px;
       font-weight: bold;
-    }
-  }
-
-  .navbar-menu {
-    display: flex;
-    justify-content: space-between;
-
-    .navbar-item {
-      padding: 0.5rem 1rem;
+      padding: 8px 16px;
       color: #333;
       &:hover {
         background-color: #e7e7e7;
       }
     }
   }
+
+  .search-container {
+    display: flex;
+    .form-inline {
+      display: flex;
+      flex-grow: 1;
+      .form-control {
+        margin-right: 8px;
+      }
+      button {
+        padding: 6px 12px;
+      }
+    }
+  }
+}
+
+body {
+  padding-top: 100px;
+}
