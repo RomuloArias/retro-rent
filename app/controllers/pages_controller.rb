@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @pages = Game.all
+    @games = Game.all
   end
 end
