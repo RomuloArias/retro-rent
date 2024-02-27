@@ -5,7 +5,7 @@ class GamesController < ApplicationController
 
   def destroy
     @game = Game.find(params[:id])
-    @user = Game.where(user: current_user)
+    @game.user = current_user
     @game.destroy
     redirect_to user_path(@user), status: :see_other
 
