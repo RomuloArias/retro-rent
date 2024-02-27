@@ -27,6 +27,17 @@ class GamesController < ApplicationController
     @review = Review.new
   end
 
+  def edit
+    @game = Game.find(params[:id])
+  end
+
+  def update
+    @game = Game.find(params[:id])
+    @game.update(game_params)
+
+    redirect_to game_path(@game)
+  end
+
   private
 
   def set_game
@@ -34,6 +45,6 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:name, :console, :genre, :year)
+    params.require(:game).permit(:name, :console, :genre, :year, :price_per_day)
   end
 end
