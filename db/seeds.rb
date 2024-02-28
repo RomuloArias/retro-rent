@@ -13,7 +13,7 @@ game_c = Game.create!(name: "The Legend of Zelda", console: "Super Nintendo", ye
 game_d = Game.create!(name: "Wonder Boy", console: "Master System", year: 1986, price_per_day: 4, genre: "Adventure", user: user_two)
 game_e = Game.create!(name: "Pac-Man", console: "Atari", year: "1980", price_per_day: 3, genre: "Arcade", user: user_three)
 game_f = Game.create!(name: "Street Fighter", console: "Super Nintendo", year: 1994, price_per_day: 3, genre: "Combat", user: user_three)
-game_g = Game.create!(name: "Tertis", console: "Super Nintendo", year: 1990, price_per_day: 3, genre: "Puzzle", user: user_four)
+game_g = Game.create!(name: "Tetris", console: "Super Nintendo", year: 1990, price_per_day: 3, genre: "Puzzle", user: user_four)
 game_h = Game.create!(name: "Mortal Combat", console: "Mega Drive", year: 1996, price_per_day: 3, genre: "Combat", user: user_four)
 
 Booking.create!(start_date: '1/3/2024', end_date: '10/3/2024', total_price: 20, confirmed: true, user: user_one, game: game_a)
