@@ -19,6 +19,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @game = Game.find(params[:game_id])
     @booking.game = @game
+    @booking_duration = (@booking.end_date-@booking.start_date).to_i
+    @booking.total_price = @booking_duration*@game.price_per_day
 
     if @booking.save
       redirect_to @booking, notice: 'retro-rent-booking was successful!'
