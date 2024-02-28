@@ -1,0 +1,31 @@
+.filter-buttons {
+  position: fixed;
+  margin-top: 0px;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 16px;
+  width: 100%;
+  padding: 10px;
+  z-index: 1030;
+}
+.filter-button-console,
+.filter-button-genre,
+.filter-button-era,
+.filter-button-deals {
+  background-color: grey;
+  flex-grow: 1;
+  height: 200px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  &:hover {
+    background-color: #333333;
+  }
+}
