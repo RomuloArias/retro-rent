@@ -1,25 +1,35 @@
-
 @mixin flex-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.game-cards {
+  @include flex-container;
+  width: 100%;
+  margin: auto;
+  padding: 16px;
 }
 
 .card {
+  flex: 0 1 auto;
   background-color: white;
-  border: 1px solid;
+  border: 1px solid #e7e7e7;
   border-radius: 30px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  overflow:hidden;
-}
-
-.game-cards{
-@include flex-container;
-gap: 1rem;
-position:absolute;
+  box-shadow: 0 20px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 200px;
+  height: 350px;
+  margin-bottom: 16px;
 }
 
 .card-image {
-border-top-right-radius: 30px;
-border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }

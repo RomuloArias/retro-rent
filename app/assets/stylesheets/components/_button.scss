@@ -1,0 +1,14 @@
+.rent-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  box-shadow: 0 0px 30px rgba(0, 0, 0, 0.1);
+  background-color: grey;
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  &:hover {
+    background-color: #e7e7e7;
+  }
+}
