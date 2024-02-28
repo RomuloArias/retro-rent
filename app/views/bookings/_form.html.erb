@@ -1,0 +1,5 @@
+<%= simple_form_for [game, booking], data: {controller: "datepicker"} do |f| %>
+  <%= f.input :start_date, label: 'from', placeholder: "rent start date", as: :string, input_html: { data: {datepicker_target: "start"}}, wrapper_html: { class: 'd-flex align-items-center justify-content-start gap-2'}, label_html: {class: 'd-flex gap-1 w-25'} %>
+  <%= f.input :end_date, label: 'to', placeholder: "rent end date", as: :string, input_html: { data: {datepicker_target: "end"}}, wrapper_html: { class: 'd-flex align-items-center justify-content-start gap-2'}, label_html: {class: 'd-flex gap-1 w-25'} %>
+  <%= f.submit 'Rent', class: "btn btn-secondary" %>
+<% end %>

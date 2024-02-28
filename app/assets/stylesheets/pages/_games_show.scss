@@ -1,0 +1,32 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  height: 600px;
+  padding: 30px 35px;
+}
+
+.imagemario {
+  width: 470px;
+  border-radius: 7%;
+  filter: grayscale(1);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.container {
+  padding: 10px 35px;
+}
+
+.card2 {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  height: 250px;
+  padding: 25px 20px;
+  border-radius: 7%;
+}
+
+.btn {
+  border-radius: 10%;
+}
