@@ -1,5 +1,5 @@
 <div class= "container">
-  <h2 class = "p-3">Newly Added</h2>
+ <h2 class = "title-nw">Newly Added</h2>
     <div class= "game-cards p-3">
       <% @games.each do |game| %>
         <div class= "card">
@@ -8,7 +8,7 @@
                 <p><%=game.genre %></p>
                 <p> <%=game.name %>, <%=game.console%></p>
                  <p> £<%=game.price_per_day %>/day</p>
-                  <%= link_to 'Rent', root_path, class: 'rent-btn' %>
+                  <%= link_to 'Rent', game_path(game), class: 'rent-btn' %>
                 </div>
              </div>
           <% end %>
