@@ -1,16 +1,19 @@
-<div class="container">
-<h1>All Bookings</h1>
 
-<ul>
-  <% @bookings.each do |booking| %>
-    <% if booking.confirmed %>
-      <span class="badge bg-success">confirmed</span>
-    <% else %>
-      <span class="badge bg-warning">pending</span>
-    <% end %>
-    <li> Price £<%= booking.total_price %></li>
-    <li>Rental dates: <%= booking.start_date %> - <%= booking.end_date %></li>
-  <% end %>
-</ul>
-</div>
-<p><%= link_to 'New retro-rent booking', games_path %></p>
+  <h2>All Bookings</h2>
+    <ul>
+      <% @bookings.each do |booking| %>
+    <div class="card-product">
+      <%= image_tag "image.png"%>
+      <div class="card-product-infos">
+        <%= booking.game.name %>
+        <% if booking.confirmed %>
+          <span class="badge bg-success">confirmed</span>
+        <% else %>
+        <span class="badge bg-warning">pending</span>
+        <% end %>
+      <li> Price £<%= booking.total_price %></li>
+      <li>Rental dates: <%= booking.start_date %> - <%= booking.end_date %></li>
+     </div>
+    </div>
+      <% end %>
+    </ul>

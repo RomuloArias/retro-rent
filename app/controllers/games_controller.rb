@@ -3,7 +3,7 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show, :destroy]
 
   def index
-    @games = Game.all
+    @games = current_user.games
   end
 
   def new
