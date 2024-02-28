@@ -1,11 +1,14 @@
-<h1>Add a new game</h1>
+<h1 class="games-new-title">Add a new game</h1>
 
-<div>
-  <%= simple_form_for(@game) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :console, collection: Game::CONSOLES %>
-    <%= f.input :genre, collection: Game::GENRES %>
-    <%= f.input :year %>
-    <%= f.submit %>
+<div class="background-grey row">
+  <div class="col-6">
+    <h1 class="listings-new" ></h1>
+  </div>
+  <%= simple_form_for(@game, html: {class: }) do |f| %>
+    <%= f.input :name, wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input'} %>
+    <%= f.input :console, collection: Game::CONSOLES, input_html: {class: 'game-name-input'} %>
+    <%= f.input :genre, collection: Game::GENRES, input_html: {class: 'game-name-input'} %>
+    <%= f.input :year,  wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input'} %>
+    <%= f.submit class: 'btn btn-primary game-submit-button'%>
   <% end %>
 </div>
