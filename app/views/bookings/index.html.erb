@@ -1,5 +1,6 @@
-
-  <h2>All Bookings</h2>
+<p><%= link_to '<Back', root_path, class: "btn backbtn" %></p>
+<div class="row m-0 justify-content-center">
+  <h2>Games I'm Currently Borrowing</h2>
     <ul>
       <% @bookings.each do |booking| %>
     <div class="card-product">
@@ -19,3 +20,4 @@
     </div>
       <% end %>
     </ul>
+</div>
