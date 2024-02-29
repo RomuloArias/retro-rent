@@ -1,7 +1,9 @@
-    <div class="row m-0 justify-content-center">
+<%# <div class=flex_bttn> %>
+    <button type="button" class="backbtn">Back</button>
+  <div class="row m-0 justify-content-center">
     <%# <div class="col-8 justify-content-center"> %>
       <div class="card-game-show">
-        <h4 class="gametitles"><b> <%= @game.name %> </b></h4>
+        <h5 class="gametitles"><b> <%= @game.name %> </b></h5>
 
         <div class="row bg-white">
             <div class="col-6">
@@ -24,7 +26,7 @@
                                     </div>
                                     <div class="gamedescription">
                                       <%# TODO code link text %>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet lacus ut augue dignissim, a tincidunt enim fringilla. Vivamus tincidunt tincidunt elit vel congue. Nam rutrum risus velit, sed sodales dui finibus sed. Praesent posuere dui vitae fermentum venenatis. Mauris id porta nisl.</p>
+                                      <p>lorem ipsum</p>
                                     </div>
                                     <%# TODO code link below information %>
                                     <h6 class="pricetext"><b>£<%= @game.price_per_day %>/day</b></h6>
@@ -46,6 +48,7 @@
             </div>
         </div>
       </div>
+<%# </div> %>
     <%# </div> %>
     <div class="reviewsection">
         <p class="gametitles"><strong>Review</strong></p>

@@ -1,10 +1,10 @@
 
 .card-game-show {
-  width: 1200px;
-  height: 620px;
+  width: 1000px;
+  // height: 620px;
   border-radius: 30px;
-  margin: 30px;
-  padding: 40px;
+  // margin: 15px;
+  padding: 25px;
 }
 
 .card-game-show {
@@ -22,11 +22,11 @@
 }
 
 .imagemario {
-  width: 500px;
-  height: 500px;
-  margin: 10px;
+  // width: 500px;
+  height: 450px;
+  margin: 30px;
   border-radius: 7%;
-  box-shadow: 0 20px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 14px 8px rgba(0,0,0,0.1);
   // border: 2px solid #10A19D;
 }
 
@@ -57,6 +57,17 @@
   color: #10A19D;
   font-size: 13px;
   height: 30px;
+}
+
+.backbtn {
+  border-radius: 10%;
+  background-color: #540375;
+  color: #10A19D;
+  font-size: 13px;
+  height: 30px;
+  width: 100px;
+  margin: 10px;
+  justify-content: start;
 }
 
 .btngrace {
@@ -148,7 +159,7 @@
   border: 1px solid #e7e7e7;
   box-shadow: 0 20px 8px rgba(0,0,0,0.1);
   overflow: hidden;
-
+  margin: 15px;
   width: 600px;
   height: 235px;
   border-radius: 30px;
