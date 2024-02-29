@@ -13,8 +13,8 @@
         <div class= "card">
            <img src="https://via.placeholder.com/350x250"  class="card-image" alt="Card Image" />
               <div class= "card-content m-3">
-                <p><%=game.genre %></p>
-                <p> <%=game.name %>, <%=game.console%></p>
+                <p> <%=game.name %>
+                <p> <%=game.console%></p>
                  <p> £<%=game.price_per_day %>/day</p>
                   <%= link_to 'Rent', game_path(game), class: 'rent-btn' %>
                 </div>
