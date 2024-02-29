@@ -9,6 +9,7 @@
     <%= f.input :console, collection: Game::CONSOLES, input_html: {class: 'game-name-input'} %>
     <%= f.input :genre, collection: Game::GENRES, input_html: {class: 'game-name-input'} %>
     <%= f.input :year,  wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input'} %>
+    <%= f.input :price_per_day,  wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input'} %>
     <%= f.submit class: 'btn btn-primary game-submit-button'%>
   <% end %>
 </div>
