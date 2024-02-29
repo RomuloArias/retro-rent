@@ -3,5 +3,8 @@ class PagesController < ApplicationController
 
   def home
     @games = Game.all
+    if params[:query].present?
+      @games = @games.searching(params[:query])
+    end
   end
 end
