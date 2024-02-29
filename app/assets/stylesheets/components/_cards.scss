@@ -21,6 +21,12 @@
   margin:auto;
 }
 
+.game-cards img {
+  height: 150px;
+  object-fit: contain;
+  padding-top: 15px;
+}
+
 .card {
   flex: 0 1 auto;
   background-color: white;
@@ -28,8 +34,8 @@
   border-radius: 30px;
   box-shadow: 0 20px 8px rgba(0,0,0,0.1);
   overflow: hidden;
-  width: 200px;
-  height: 350px;
+  width: 250px;
+  height: 300px;
   margin-bottom: 16px;
 }
 
