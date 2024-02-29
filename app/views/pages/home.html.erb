@@ -11,7 +11,7 @@
     <div class= "game-cards p-3">
       <% @games.each do |game| %>
         <div class= "card">
-           <img src="https://via.placeholder.com/350x250"  class="card-image" alt="Card Image" />
+           <%= image_tag "#{game.image_url}" %>
               <div class= "card-content m-3">
                 <p><%=game.genre %></p>
                 <p> <%=game.name %>, <%=game.console%></p>

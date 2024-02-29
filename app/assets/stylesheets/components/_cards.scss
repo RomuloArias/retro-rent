@@ -21,6 +21,11 @@
   margin:auto;
 }
 
+.game-cards img {
+  height: 150px;
+  object-fit: contain;
+}
+
 .card {
   flex: 0 1 auto;
   background-color: white;
