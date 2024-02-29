@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @game = Game.find(params[:game_id])
@@ -35,14 +36,15 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update(booking_params_params)
+    @booking.update(booking_params)
     # No need for app/views/restaurants/update.html.erb
-    redirect_to booking_path(@booking)
+    redirect_to bookings_path, notice: 'Updated successfully'
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to bookings_path, notice: 'Updated successfully'
   end
 
   private
