@@ -25,7 +25,7 @@ result[:results].each do |game|
     next
   end
 
-  https://www.giantbomb.com/api/games?api_key=8bf1a4825f3014203e646d9481076557a0352892&format=json
+  # https://www.giantbomb.com/api/games?api_key=8bf1a4825f3014203e646d9481076557a0352892&format=json
 
   Game.create!(
     console: game[:platforms][0][:name],
