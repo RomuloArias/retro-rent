@@ -5,7 +5,7 @@
         <div class="row bg-white">
             <div class="col-6">
               <%# TODO code link below information %>
-                <h2 class="gametitles"><b> Mario Cart</b></h2>
+                <h3 class="gametitles"><b> Mario Cart</b></h3>
                 <%# TODO CENTRE THIS %>
                 <%= image_tag "mobile_MarioKartTour_screen_01-1260x1260.png", alt: @game.name, class: "imagemario"%>
             </div>
@@ -20,7 +20,6 @@
                                     <%# TODO code link below information %>
                                     <div class="gameinfo">
                                       <h6>GameBoy</h6>
-                                      <h6>Action</h6>
                                       <h6>2003</h6>
                                       <p></p>
                                     </div>
@@ -30,12 +29,12 @@
                                     </div>
                                     <%# TODO code link below information %>
                                     <h6 class="pricetext"><b>£2.00/day</b></h6>
-                                    <button type="button" class="btngrace">Hover Here To Rent!</button>
+                                    <button type="button" class="btngrace">^Hover to Rent^</button>
                                 </div>
                   </div>
                   <div class="flip-card-back">
                                 <div class="containergrace">
-                                    <h4 ><b>Rent</b></h4>
+                                    <h4><b>Rent</b></h4>
                                     <p></p>
                                     <div class="rentform">
                                       <%= render 'bookings/form', game: @game, booking: @booking %>
@@ -50,8 +49,10 @@
       </div>
     </div>
   </div>
+
+<div class="reviewsection">
   <div>
-    <p><strong>Reviews</strong></p>
+    <p class="gametitles"><strong>Review</strong></p>
     <ul class="list-group">
       <% @game.reviews.each do |review| %>
       <li class="list-group-item"><%= review.content %></li>
@@ -59,17 +60,16 @@
     </ul>
   </div>
   <div>
-    <h2>New review</h2>
+    <%# <p>New Review</p> %>
     <%= simple_form_for [@game, @review] do |f| %>
     <%= f.input :content %>
-    <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
     <% end %>
   </div>
-  <div>
+  <div class="btn">
     <%= link_to "Delete",
     game_path(@game),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+    %>
   </div>
-</body>
-</html>
+</div>
