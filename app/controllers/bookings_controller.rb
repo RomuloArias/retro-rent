@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     @booking.total_price = @booking_duration*@game.price_per_day
 
     if @booking.save
-      redirect_to @booking, notice: 'retro-rent-booking was successful!'
+      redirect_to bookings_path, notice: 'retro-rent-booking was successful!'
     else
       render :new, status: :unprocessable_entity
     end

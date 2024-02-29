@@ -11,6 +11,10 @@
   padding: 16px;
 }
 
+.card-content p {
+  font-size: 12px;
+}
+
   .game-cards {
   @include flex-container;
   width: 100%;
