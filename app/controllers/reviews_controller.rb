@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
       if @review.save
       redirect_to game_path(@game)
       else
+        @booking = Booking.new
         render "games/show", status: :unprocessable_entity
       end
   end
