@@ -8,14 +8,25 @@
   width: 100%;
 
 
-  .navbar-brand, .navbar-end {
-    .navbar-item {
-      width: 50px;
+  .logo {
       &:hover {
         background-color: #e7e7e7;
       }
     }
   }
+
+  .icon {
+    width:50px;
+  }
+
+  .navbar a {
+    text-decoration: none;
+  }
+
+  .navbar-item {
+    width:50px;
+  }
+
 
   .search-container {
     display: flex;
@@ -30,8 +41,7 @@
       }
     }
   }
-}
 
 .spacer {
-  height: 60px;
+  height: 63px;
 }
