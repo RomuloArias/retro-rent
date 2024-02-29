@@ -10,12 +10,17 @@
     <% end %>
   </div>
 
- <form class="d-flex" role="search" style="max-width: 450px; margin: auto;">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn-search" type="submit">
-         <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
-         </button>
-        </form>
+  <div class="search-container">
+
+    <%= form_with url: root_path, method: :get, class: "d-flex", style: "max-width: 450px; margin: auto;" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control me-2",
+            placeholder: "Search"
+        %>
+     <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
+    <% end %>
+  </div>
 
   <div class="navbar-end">
 
