@@ -50,16 +50,6 @@
       </div>
     </div>
   </div>
-
-  <div class="rentform">
-    <form>
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname">
-    </form>
-
-  </div>
   <div>
     <p><strong>Reviews</strong></p>
     <ul class="list-group">
@@ -75,6 +65,11 @@
     <%= f.submit "Submit review", class: "btn btn-primary" %>
     <% end %>
   </div>
-
+  <div>
+    <%= link_to "Delete",
+    game_path(@game),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+  </div>
 </body>
 </html>

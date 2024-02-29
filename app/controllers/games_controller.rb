@@ -18,14 +18,14 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    @game.user = current_user
     @game.destroy
-    redirect_to user_path(@user), status: :see_other
+    redirect_to games_path
   end
 
   def show
     @reviews = @game.reviews
     @review = Review.new
+    @booking = Booking.new
   end
 
   def edit
