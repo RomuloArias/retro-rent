@@ -24,7 +24,19 @@ class GamesController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
+    @reviews = @game.reviews
+    @review = Review.new
+  end
+
+  def edit
+    @game = Game.find(params[:id])
+  end
+
+  def update
+    @game = Game.find(params[:id])
+    @game.update(game_params)
+
+    redirect_to game_path(@game)
   end
 
   private

@@ -51,3 +51,31 @@
       </div>
     </div>
   </div>
+
+  <div class="rentform">
+    <form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname">
+    </form>
+
+  </div>
+  <div>
+    <p><strong>Reviews</strong></p>
+    <ul class="list-group">
+      <% @game.reviews.each do |review| %>
+      <li class="list-group-item"><%= review.content %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div>
+    <h2>New review</h2>
+    <%= simple_form_for [@game, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+</body>
+</html>
