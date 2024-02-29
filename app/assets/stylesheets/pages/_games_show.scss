@@ -30,6 +30,11 @@
   // border: 2px solid #10A19D;
 }
 
+.imagemario:hover {
+  box-shadow: 0 14px 8px rgba(0,0,0,0.1);
+  transform: scale(1.01)
+}
+
 .containergrace {
   padding: 20px;
 }
@@ -60,13 +65,14 @@
 }
 
 .backbtn {
-  border-radius: 10%;
+  border-radius: 7%;
   background-color: #540375;
   color: #10A19D;
   font-size: 13px;
-  height: 30px;
+  height: 40px;
   width: 100px;
-  margin: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
   justify-content: start;
 }
 
@@ -77,6 +83,7 @@
   border-radius: 10%;
   background-color: #540375;
   color: #10A19D;
+  justify-content: baseline;
 }
 
 // BELOW IS CSS FOR Text fromatiing ---
