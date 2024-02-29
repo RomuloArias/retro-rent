@@ -1,7 +1,13 @@
 <nav class="navbar fixed-top">
   <div class="navbar-brand">
-    <%= link_to "Menu", root_path, class: "navbar-item" %>
-    <%= link_to "RetroRent", root_path, class: "navbar-item" %>
+
+  <%= link_to root_path class: "navbar-item" do %>
+ <i class="fa-solid fa-bars fa-xl" style="color: #540375;"></i>
+  <% end %>
+
+    <%= link_to root_path do %>
+    <%= image_tag "logo.png", alt: "alttext", class: "logo navbar-item" %>
+    <% end %>
   </div>
 
   <div class="search-container">
@@ -14,12 +20,20 @@
   <div class="navbar-end">
 
     <%if user_signed_in?%>
-      <%= link_to "Bookings", bookings_path, class: "navbar-item" %>
-      <%= link_to "Listings", games_path, class: "navbar-item" %>
-      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "navbar-item" %>
+      <%= link_to bookings_path, class: "navbar-item" do %>
+      <i class="fa-solid fa-book fa-2xl" style="color:  #540375;"></i>
+        <% end%>
+      <%= link_to games_path, class: "navbar-item" do %>
+      <i class="fa-solid fa-list fa-2xl" style="color: #540375;"></i>
+        <% end%>
+      <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "navbar-item" do %>
+      <i class="fa-solid fa-right-from-bracket fa-flip-horizontal fa-2xl" style="color:  #540375;"></i>
+      <% end%>
     <% else%>
-      <%= link_to "Sign In", new_user_session_path, class: "navbar-item" %>
-    <% end%>
+     <%= link_to new_user_session_path, class: "navbar-item" do %>
+     <i class="fa-solid fa-right-to-bracket fa-2xl" style="color: #540375;"></i>
+  <% end%>
+  <%end%>
   </div>
 </nav>
 <div class="spacer"></div>
