@@ -1,14 +1,10 @@
-<%# <div class=flex_bttn> %>
-    <%# <button type="button" class="backbtn">Back</button> %>
     <p><%= link_to '<Back', root_path, class: "btn backbtn" %></p>
   <div class="row m-0 justify-content-center">
-    <%# <div class="col-8 justify-content-center"> %>
       <div class="card-game-show">
         <h5 class="gametitles"><b> <%= @game.name %> </b></h5>
 
         <div class="row bg-white">
             <div class="col-6">
-                <%# TODO CENTRE THIS %>
                 <%= image_tag @game.image_url, alt: @game.name, class: "imagemario"%>
             </div>
 
@@ -19,17 +15,14 @@
                                 <div class="containergrace">
                                     <h4 ><b>About</b></h4>
                                     <p></p>
-                                    <%# TODO code link below information %>
                                     <div class="gameinfo">
                                       <h6><%= @game.console %></h6>
                                       <h6><%= @game.year%></h6>
                                       <p></p>
                                     </div>
                                     <div class="gamedescription">
-                                      <%# TODO code link text %>
                                       <p><%= @game.description%></p>
                                     </div>
-                                    <%# TODO code link below information %>
                                     <h6 class="pricetext"><b>£<%= @game.price_per_day %>/day</b></h6>
                                     <button type="button" class="btngrace">^Hover to Rent^</button>
                                 </div>
@@ -49,8 +42,6 @@
             </div>
         </div>
       </div>
-<%# </div> %>
-    <%# </div> %>
     <div class="reviewsection">
         <p class="gametitles"><strong>Review</strong></p>
         <ul class="list-group">
@@ -58,7 +49,6 @@
           <li class="list-group-item"><%= review.content %></li>
           <% end %>
         </ul>
-          <%# <p>New Review</p> %>
           <%= simple_form_for [@game, @review] do |f| %>
           <%= f.input :content %>
           <%= f.submit "Submit", class: "btn btn-primary" %>
