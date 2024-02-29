@@ -1,5 +1,6 @@
 <%# <div class=flex_bttn> %>
-    <button type="button" class="backbtn">Back</button>
+    <%# <button type="button" class="backbtn">Back</button> %>
+    <p><%= link_to '<Back', root_path, class: "btn backbtn" %></p>
   <div class="row m-0 justify-content-center">
     <%# <div class="col-8 justify-content-center"> %>
       <div class="card-game-show">
@@ -26,7 +27,7 @@
                                     </div>
                                     <div class="gamedescription">
                                       <%# TODO code link text %>
-                                      <p>lorem ipsum</p>
+                                      <p><%= @game.description%></p>
                                     </div>
                                     <%# TODO code link below information %>
                                     <h6 class="pricetext"><b>£<%= @game.price_per_day %>/day</b></h6>
