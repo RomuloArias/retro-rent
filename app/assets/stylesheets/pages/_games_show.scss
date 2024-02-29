@@ -142,8 +142,6 @@
 
 // BELOW IS CSS FOR THE FLIP CARD RENTAL FORM/ABOUT SECTION---
 .reviewsection {
-  flex: 0 1 auto;
-  flex: content;
   box-shadow: 8px 10px 30px 0 rgba(0,0,0,0.2);
   transition: all 0.2s ease-in-out;
   background-color: white;
@@ -156,6 +154,10 @@
   border-radius: 30px;
   margin-left: 60px;
   padding: 20px;
+}
+
+.buttonalign {
+  justify-content: space-between;
 }
 
 .reviewsection:hover {

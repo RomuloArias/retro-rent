@@ -51,25 +51,23 @@
   </div>
 
 <div class="reviewsection">
-  <div>
     <p class="gametitles"><strong>Review</strong></p>
     <ul class="list-group">
       <% @game.reviews.each do |review| %>
       <li class="list-group-item"><%= review.content %></li>
       <% end %>
     </ul>
-  </div>
-  <div>
-    <%# <p>New Review</p> %>
-    <%= simple_form_for [@game, @review] do |f| %>
-    <%= f.input :content %>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-  <div class="btn">
-    <%= link_to "Delete",
-    game_path(@game),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %>
+  <div class="buttonalign">
+      <%# <p>New Review</p> %>
+      <%= simple_form_for [@game, @review] do |f| %>
+      <%= f.input :content %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+    <div class="btn">
+      <%= link_to "Delete",
+      game_path(@game),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </div>
   </div>
 </div>
