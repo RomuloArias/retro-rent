@@ -6,11 +6,19 @@
   gap: 16px;
 }
 
-.game-cards {
+.container {
+  // margin-top: 300px;
+  padding: 16px;
+}
+
+.card-content p {
+  font-size: 12px;
+}
+
+  .game-cards {
   @include flex-container;
   width: 100%;
-  margin: auto;
-  padding: 16px;
+  margin:auto;
 }
 
 .card {
