@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
+
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :bookings, dependent: :destroy
@@ -13,4 +14,11 @@ class Game < ApplicationRecord
   #   { in: GENRES,
   #     message: "%{value} is not a valid genre" }
   validates :price_per_day, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :searching,
+  against: [ :name, :console ],
+  using: {
+    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
 end
