@@ -1,51 +1,55 @@
+<div class="showpage">
   <div class="row m-0">
-      <div class="col-8">
-        <div class="card-game-show w-100">
-          <div class="row bg-white">
+    <div class="col-8">
+      <div class="card-game-show w-100">
+
+        <div class="row bg-white">
             <div class="col-6">
-              <div>
-                <h2><b>Retro Game Title</b></h2>
+              <%# TODO code link below information %>
+                <h2 class="titlees"><b> Mario Cart</b></h2>
+                <%# TODO CENTRE THIS %>
                 <%= image_tag "mobile_MarioKartTour_screen_01-1260x1260.png", alt: @game.name, class: "imagemario"%>
-              </div>
             </div>
+
             <div class="col-6">
-              <div>
-                <div class="container">
-                <p></p>
-                <p></p>
-                <p></p>
-                <h5><b>Game Information</b></h5>
-                  <p></p>
-                  <h6>Console: <b>GameBoy</b></h6>
-                  <h6>Genre: <b>Action</b></h6>
-                  <h6>Year: <b>2003</b></h6>
-                  <p></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet lacus ut augue dignissim, a tincidunt enim fringilla. Vivamus tincidunt tincidunt elit vel congue. Nam rutrum risus velit, sed sodales dui finibus sed. Praesent posuere dui vitae fermentum venenatis. Mauris id porta nisl.</p>
-                    <p></p>
-                    <p>Morbi tincidunt, libero quis convallis porttitor, quam magna bibendum ex, sed aliquet metus nibh non ante. Praesent ullamcorper urna ac vestibulum convallis.</p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                  <h6><b>£2.00/day</b></h6>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                                <div class="containergrace">
+                                    <h4 ><b>About</b></h4>
+                                    <p></p>
+                                    <%# TODO code link below information %>
+                                    <div class="gameinfo">
+                                      <h6><b>GameBoy</b></h6>
+                                      <h6><b>Action</b></h6>
+                                      <h6><b>2003</b></h6>
+                                    </div>
+                                    <div class="gamedescription">
+                                      <p></p>
+                                      <%# TODO code link text %>
+                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet lacus ut augue dignissim, a tincidunt enim fringilla. Vivamus tincidunt tincidunt elit vel congue. Nam rutrum risus velit, sed sodales dui finibus sed. Praesent posuere dui vitae fermentum venenatis. Mauris id porta nisl.</p>
+                                      Morbi tincidunt, libero quis convallis porttitor, quam magna bibendum ex, sed aliquet metus nibh non ante. Praesent ullamcorper urna ac vestibulum convallis.</p>
+                                    </div>
+                                    <%# TODO code link below information %>
+                                    <h6 class="pricetext"><b>£2.00/day</b></h6>
+                                    <button type="button" class="btngrace">Rent Game</button>
+                                </div>
+                  </div>
+                  <div class="flip-card-back">
+                                <div class="containergrace">
+                                    <h4 ><b>Rent</b></h4>
+                                    <p></p>
+                                    <div class="rentform">
+                                      <%= render 'bookings/form', game: @game, booking: @booking %>
+                                    </div>
+                                  </div>
+                  </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
-
       </div>
-
-      <div class="col-4">
-        <div class="card2">
-        <h4><b>Rent</b></h4>
-          <div class="rentform">
-            <%= render 'bookings/form', game: @game, booking: @booking %>
-          </div>
-          <p></p>
-          <h6><b>Total          £30.00</b></h6>
-        </div>
-      </div>
-
-
-  </div>
+    </div>
+</div>
