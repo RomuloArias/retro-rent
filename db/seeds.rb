@@ -25,12 +25,10 @@ result[:results].each do |game|
     next
   end
 
-  # https://www.giantbomb.com/api/games?api_key=8bf1a4825f3014203e646d9481076557a0352892&format=json
-
   Game.create!(
     console: game[:platforms][0][:name],
-    description: game[:image][:description],
     # genre: game[:genre]
+    description: game[:deck],
     image_url: game[:image][:original_url],
     name: game[:name],
     price_per_day: (1..5).to_a.sample,
