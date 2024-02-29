@@ -1,0 +1,14 @@
+<h1>Edit <%= @game.name  %></h1>
+<%= form_with model: @game do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :console %>
+  <%= f.text_field :console %>
+  <%= f.label :genre %>
+  <%= f.number_field :genre %>
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+  <%= f.label :price_per_day %>
+  <%= f.number_field :price_per_day %>
+  <%= f.submit %>
+<% end %>
