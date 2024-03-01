@@ -18,6 +18,10 @@
   padding: 50px;
 }
 
+.card-new{
+  height: 460px;
+  width: 300px;
+}
 
 .card {
   flex: 0 1 auto;
@@ -25,11 +29,14 @@
   border: 1px solid #e7e7e7;
   border-radius: 30px;
   overflow: hidden;
-  width: 220px;
-  height: 300px;
   margin-bottom: 16px;
   border: dotted #540375;
   ;
+}
+
+.card-home {
+  width: 250px;
+  height: 300px;
 }
 
 .card img {

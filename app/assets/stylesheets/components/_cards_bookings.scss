@@ -1,29 +1,65 @@
-.card-product {
-  overflow: hidden;
-  min-height: 120px;
-  width: 600px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin: 15px 0px 15px 50px;
-  border-radius: 10px;
+.backgroundgrace {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(asset_path('cover.png'));
+  min-height: 900px;
 }
 
-ul {
+.cardlistings {
+  width: 780px;
+  border-radius: 30px;
+  margin-bottom: 50px;
+  padding: 25px;
+  justify-content: center;
+}
+
+.cardlistings {
+  flex: 0 1 auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: all 0.2s ease-in-out;
+  background-color:rgba(255, 255, 255, 0.862);
+  box-shadow: 0 20px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.card-product {
+  overflow: hidden;
+  min-height: 150px;
+  width: 600px;
+  background:white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+.card-product:hover {
+  transform: scale(1.005);
+  box-shadow: 10px 8px 0 #10A19D;
+}
+
+.rentalist {
   list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-product img {
-  height: 100%;
   width: 120px;
+  height: 120px;
   object-fit: cover;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
 }
 
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: #540375;
 }
 
 .card-product p {
@@ -32,8 +68,25 @@ ul {
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  color: #10A19D;;
 }
 
 .card-product .card-product-infos {
-  padding: 50px;
+  padding: 16px;
+}
+
+.rentaltitle {
+  color: black;
+  font-size: large;
+  text-align: center;
+}
+
+.allignment{
+  display: flex;
+  align-items: baseline;
+}
+
+.putmiddle {
+  display: flex;
+  justify-content: end;
 }

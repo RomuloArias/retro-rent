@@ -1,11 +1,31 @@
 class Game < ApplicationRecord
-
+  after_update :update_bookings
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :bookings, dependent: :destroy
   GENRES = %w[Action Adventure Arcade Combat Fantasy Platform Puzzle Strategy]
-  CONSOLES = ["Atari", "Dreamcast", "Game Boy", "Game Boy Advance", "Game Boy Colour", "Game Cube", "Game Gear",
-    "Master System", "Super Nintendo", "Mega Drive","N64", "NES", "PS1", "PS2", "PlayStation Portable", "PlayStation", "Sega Saturn", "SNES", "Xbox"]
+  CONSOLES = [
+    "Atari",
+    "Dreamcast",
+    "Game Boy",
+    "Game Boy Advance",
+    "Game Boy Colour",
+    "Game Cube",
+    "Game Gear",
+    "Master System",
+    "Super Nintendo",
+    "Mega Drive",
+    "Nintendo 64",
+    "NES",
+    "PlayStation Portable",
+    "PlayStation",
+    "PlayStation 2",
+    "Sega Saturn",
+    "Sega Game Gear",
+    "SNES",
+    "Super Nintendo Entertainment System",
+    "Xbox"
+  ]
   validates :name, presence: true
   validates :console, presence: true, inclusion:
     { in: CONSOLES,
@@ -21,4 +41,11 @@ class Game < ApplicationRecord
   using: {
     tsearch: { prefix: true } # <-- now `superman batm` will return something!
   }
+  private
+
+  def update_bookings
+    bookings.each do |booking|
+      booking.update(total_price: booking.booking_duration*price_per_day)
+    end
+  end
 end

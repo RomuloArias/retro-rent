@@ -1,41 +1,27 @@
-<p><%= link_to '<Back', root_path, class: "btn backbtn" %></p>
-<div class="row m-0 justify-content-center">
-  <div class="cardlistings">
-    <h2>Games I'm renting out</h2>
+ <div class="backgroundgrace">
+  <div class="allignment">
+    <p><%= link_to '<Back', root_path, class: "btn backbtn" %></p>
+    <p><%= link_to 'Add game', new_game_path, class: "btn backbtn" %></p>
+  </div>
+  <div class="row m-0 justify-content-center">
+    <div class="cardlistings">
+      <h2 class ="rentaltitle">Games Lent Out</h2>
 
-      <% @games.each do |game| %>
-        <div class="card-product">
-          <%= image_tag "#{game.image_url}" %>
-          <div class="card-product-infos">
-            <h2><%= game.name %></h2>
-            <p><%= game.genre %></p>
-            <p><%= game.console %></p>
-            <p>£<%= game.price_per_day %> /day</p>
-          </div>
-        </div>
-      <% end %>
+            <ul class="rentalist">
+              <% @games.each do |game| %>
+                <div class="card-product">
+                  <%= image_tag "#{game.image_url}" %>
+                  <div class="card-product-infos">
+                    <h2><%= game.name %></h2>
+                    <p><%= game.genre %></p>
+                    <p><%= game.console %></p>
+                    <p>£<%= game.price_per_day %> /day</p>
+                  </div>
+                </div>
+              <% end %>
+            </ul>
 
-    <p><%= link_to 'Add game', new_game_path, class: 'btn btn-ghost' %></p>
+
+    </div>
   </div>
 </div>
-
-
-<style>
-.cardlistings {
-  width: 1000px;
-  height: 620px;
-  border-radius: 30px;
-  margin: 15px;
-  padding: 25px;
-}
-
-.cardlistings {
-  flex: 0 1 auto;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: all 0.2s ease-in-out;
-  background-color: white;
-  border: 1px solid #e7e7e7;
-  box-shadow: 0 20px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-}
-</style>

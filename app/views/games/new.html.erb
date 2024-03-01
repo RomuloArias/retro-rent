@@ -4,12 +4,16 @@
   <div class="col-6">
     <h1 class="listings-new" ></h1>
   </div>
-  <%= simple_form_for(@game, html: {class: }) do |f| %>
-    <%= f.input :name, wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input'} %>
-    <%= f.input :console, collection: Game::CONSOLES, input_html: {class: 'game-name-input'} %>
-    <%= f.input :genre, collection: Game::GENRES, input_html: {class: 'game-name-input'} %>
-    <%= f.input :year,  wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input'} %>
-    <%= f.input :price_per_day,  wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input'} %>
-    <%= f.submit class: 'btn btn-primary game-submit-button'%>
+  <%= simple_form_for(:game_search, method: "get", url: new_game_path) do |f| %>
+    <%= f.input :name, wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input', value: @game_name} %>
+    <%= f.submit 'Search for game', class: 'btn btn-primary game-submit-button'%>
   <% end %>
+  <div class="game-cards p-3">
+    <% @games&.each do |game| %>
+      <%= render "games/game", game: game %>
+    <% end %>
+    <% if @games&.empty? %>
+      <p>No games found</p>
+    <% end %>
+  </div>
 </div>
