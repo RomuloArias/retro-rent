@@ -1,4 +1,4 @@
-    <p><%= link_to '<Back', root_path, class: "btn backbtn" %></p>
+  <p><%= link_to '<Back', root_path, class: "btn backbtn" %></p>
   <div class="row m-0 justify-content-center">
       <div class="card-game-show">
         <h5 class="gametitles"><b> <%= @game.name %> </b></h5>
@@ -50,8 +50,8 @@
           <% end %>
         </ul>
           <%= simple_form_for [@game, @review] do |f| %>
-          <%= f.input :content %>
-          <%= f.submit "Submit", class: "btn btn-primary" %>
+          <%= f.input :content, placeholder: "Leave your review here...", label: false%>
+          <%= f.submit "Submit", class: "btn btn-primary"%>
           <% end %>
     </div>
   </div>
