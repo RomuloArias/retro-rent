@@ -10,7 +10,6 @@
   height: 70px;
 
 
-
   .logo {
       &:hover {
         background-color: #e7e7e7;
@@ -28,7 +27,24 @@
 
   .navbar-item {
     width:50px;
+    size: 50px
   }
+
+  .form-control {
+    font-size: 12px;
+  }
+
+.navbar-end i {
+  width:50px;
+  padding:5px;
+  size: 50px;
+}
+
+.serach-container i{
+  width:50px;
+  padding:5px;
+  size: 50px;
+}
 
 .spacer {
   // height: 76px;
