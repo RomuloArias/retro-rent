@@ -1,0 +1,19 @@
+<div class="card <%= current_page?(root_path) ? 'card-home' : 'card-new' %>">
+  <%= image_tag "#{game.image_url}" %>
+  <div class="card-content m-3">
+    <p><%= game.name %></p>
+    <p><%= game.console %></p>
+    <% if game.price_per_day.present? %>
+      <p>£<%= game.price_per_day %>/day</p>
+    <% end %>
+  </div>
+  <% if game.id.nil? %>
+    <%= simple_form_for(game, html: {class: 'p-3'}) do |f| %>
+      <%= f.input :name, as: :hidden, wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input', value: game.name} %>
+      <%= f.input :console, as: :hidden, collection: Game::CONSOLES, input_html: {class: 'game-name-input', value: game.console} %>
+      <%= f.input :year, as: :hidden, wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input', value: game.year} %>
+      <%= f.input :price_per_day,  wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input'} %>
+      <%= f.submit 'Save game', class: 'btn btn-primary game-submit-button'%>
+    <% end %>
+  <% end %>
+</div>
