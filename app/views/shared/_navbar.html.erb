@@ -1,10 +1,6 @@
 <nav class="navbar fixed-top">
   <div class="navbar-brand">
 
-  <%= link_to root_path class: "navbar-item" do %>
- <i class="fa-solid fa-bars fa-xl" style="color: #540375;"></i>
-  <% end %>
-
     <%= link_to root_path do %>
     <%= image_tag "logo.png", alt: "alttext", class: "logo navbar-item" %>
     <% end %>
@@ -12,13 +8,13 @@
 
   <div class="search-container">
 
-    <%= form_with url: root_path, method: :get, class: "d-flex", style: "max-width: 450px; margin: auto;" do %>
+    <%= form_with url: root_path, method: :get, class: "d-flex", style: "max-width: 650px; margin: auto;" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control me-2",
             placeholder: "Search"
         %>
-     <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
+     <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
     <% end %>
   </div>
 
