@@ -8,6 +8,8 @@ class GamesController < ApplicationController
     @games = current_user.games.sort_by(&:updated_at).reverse
     if params[:query].present?
       @games = @games.searching(params[:query])
+    else
+      @games = Game.all
     end
   end
 

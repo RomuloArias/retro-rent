@@ -6,13 +6,22 @@
 </div>
 
 <div class="container cards-all">
-<div class="row">
-    <div class="col-12">
-  <h2 class="title-nw">Newly Added</h2>
-  <div class="game-cards p-3">
-    <% @games.each do |game| %>
-      <%= link_to game_path(game), class: 'card-link' do %>
-        <%= render "games/game", game: game %>
+    <% if @games.empty? %>
+      <h3>Sorry, no games found <span class="font-size">&#128128;</span></h3>
+    <% else %>
+      <h2 class="title-nw">Newly Added</h2>
+      <div class="game-cards p-3">
+      <% @games.each do |game| %>
+        <%= link_to game_path(game), class: 'card-link' do %>
+          <div class="card">
+            <%= image_tag "#{game.image_url}" %>
+            <div class="card-content m-3">
+              <p><%= game.name %></p>
+              <p><%= game.console %></p>
+              <p>£<%= game.price_per_day %>/day</p>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
