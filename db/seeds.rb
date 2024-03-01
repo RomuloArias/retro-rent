@@ -34,7 +34,7 @@ result[:results].each do |game|
     image_url: game[:image][:original_url],
     name: game[:name],
     price_per_day: (1..5).to_a.sample,
-    user: [user_one, user_two, user_three, user_four].sample,
+    user: [user_one, user_two, user_three, user_four, user_five].sample,
     year: game[:original_release_date].present? ? Date.parse(game[:original_release_date]).year : game[:expected_release_year]
   )
 end

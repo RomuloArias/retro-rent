@@ -1,11 +1,12 @@
-    <div class="row m-0 justify-content-center">
-    <%# <div class="col-8 justify-content-center"> %>
+<div class="backgroundgrace">
+
+    <p><%= link_to '<Back', root_path, class: "btn backbtn" %></p>
+  <div class="row m-0 justify-content-center">
       <div class="card-game-show">
-        <h4 class="gametitles"><b> <%= @game.name %> </b></h4>
+        <h5 class="gametitles"> <%= @game.name %> </h5>
 
         <div class="row bg-white">
             <div class="col-6">
-                <%# TODO CENTRE THIS %>
                 <%= image_tag @game.image_url, alt: @game.name, class: "imagemario"%>
             </div>
 
@@ -14,26 +15,23 @@
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
                                 <div class="containergrace">
-                                    <h4 ><b>About</b></h4>
+                                    <h5 >About</h5>
                                     <p></p>
-                                    <%# TODO code link below information %>
                                     <div class="gameinfo">
                                       <h6><%= @game.console %></h6>
                                       <h6><%= @game.year%></h6>
                                       <p></p>
                                     </div>
                                     <div class="gamedescription">
-                                      <%# TODO code link text %>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet lacus ut augue dignissim, a tincidunt enim fringilla. Vivamus tincidunt tincidunt elit vel congue. Nam rutrum risus velit, sed sodales dui finibus sed. Praesent posuere dui vitae fermentum venenatis. Mauris id porta nisl.</p>
+                                      <p><%= @game.description%></p>
                                     </div>
-                                    <%# TODO code link below information %>
                                     <h6 class="pricetext"><b>£<%= @game.price_per_day %>/day</b></h6>
                                     <button type="button" class="btngrace">^Hover to Rent^</button>
                                 </div>
                   </div>
                   <div class="flip-card-back">
                                 <div class="containergrace">
-                                    <h4><b>Rent</b></h4>
+                                    <h5>Rent</h5>
                                     <p></p>
                                     <div class="rentform">
                                       <%= render 'bookings/form', game: @game, booking: @booking %>
@@ -46,18 +44,17 @@
             </div>
         </div>
       </div>
-    <%# </div> %>
     <div class="reviewsection">
-        <p class="gametitles"><strong>Review</strong></p>
+        <h5 class="containergrace"><strong>Review</strong></h5>
         <ul class="list-group">
           <% @game.reviews.each do |review| %>
           <li class="list-group-item"><%= review.content %></li>
           <% end %>
         </ul>
-          <%# <p>New Review</p> %>
           <%= simple_form_for [@game, @review] do |f| %>
-          <%= f.input :content %>
-          <%= f.submit "Submit", class: "btn btn-primary" %>
+          <%= f.input :content, placeholder: "Leave your review here...", label: false%>
+          <%= f.submit "Submit", class: "btn btn-primary"%>
           <% end %>
     </div>
   </div>
+</div>
