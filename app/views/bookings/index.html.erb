@@ -1,34 +1,41 @@
-<p><%= link_to '<Back', root_path, class: "btn backbtn" %></p>
-<div class="row m-0 justify-content-center">
-  <h2>Games I'm Currently Borrowing</h2>
-    <ul>
-      <% @bookings.each do |booking| %>
-    <div class="card-product">
-      <%= image_tag "logo.png"%>
-      <div class="card-product-infos">
-        <%= booking.game.name %>
-        <% if booking.confirmed %>
-          <span class="badge bg-success">confirmed</span>
-        <% else %>
-        <span class="badge bg-warning">pending</span>
-        <% end %>
-      <li> Price £<%= booking.total_price %></li>
-      <li>Rental dates: <%= booking.start_date %> - <%= booking.end_date %></li>
-      <li> <%= link_to "Edit", edit_booking_path(booking) %> </li>
+<div class="backgroundgrace">
+  <p><%= link_to '<Back', root_path, class: "btn backbtn" %></p>
+  <div class="row m-0 justify-content-center">
+    <div class="cardlistings">
+      <h2>Games I'm Currently Borrowing</h2>
+        <ul>
+          <% @bookings.each do |booking| %>
+        <div class="card-product">
+          <%= image_tag "logo.png"%>
+          <div class="card-product-infos">
+            <%= booking.game.name %>
+            <% if booking.confirmed %>
+              <span class="badge bg-success">confirmed</span>
+            <% else %>
+            <span class="badge bg-warning">pending</span>
+            <% end %>
+          <li> Price £<%= booking.total_price %></li>
+          <li>Rental dates: <%= booking.start_date %> - <%= booking.end_date %></li>
+          <li> <%= link_to "Edit", edit_booking_path(booking) %> </li>
 
-     </div>
+        </div>
+        </div>
+          <% end %>
+        </ul>
     </div>
-      <% end %>
-    </ul>
+  </div>
 </div>
 
-s
+
 <style>
+.backgroundgrace {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(asset_path('cover.png'));
+}
+
 .cardlistings {
-  width: 1000px;
-  // height: 620px;
+  width: 780px;
   border-radius: 30px;
-  // margin: 15px;
+  margin: 15px;
   padding: 25px;
 }
 
@@ -41,4 +48,9 @@ s
   box-shadow: 0 20px 8px rgba(0,0,0,0.1);
   overflow: hidden;
 }
+/* .cardlistings:hover {
+  transform: scale(1.005);
+  box-shadow: 10px 8px 0 #10A19D;;
+} */
+
 </style>
