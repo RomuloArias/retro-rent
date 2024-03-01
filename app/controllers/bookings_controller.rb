@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = current_user.bookings
+    @bookings = current_user.bookings.sort_by(&:updated_at).reverse
   end
 
   def show

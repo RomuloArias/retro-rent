@@ -52,8 +52,8 @@
           <% end %>
         </ul>
           <%= simple_form_for [@game, @review] do |f| %>
-          <%= f.input :content %>
-          <%= f.submit "Submit", class: "btn btn-primary" %>
+          <%= f.input :content, placeholder: "Leave your review here...", label: false%>
+          <%= f.submit "Submit", class: "btn btn-primary"%>
           <% end %>
     </div>
   </div>
