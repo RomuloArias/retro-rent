@@ -12,6 +12,7 @@
       <%= f.input :name, as: :hidden, wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input', value: game.name} %>
       <%= f.input :console, as: :hidden, collection: Game::CONSOLES, input_html: {class: 'game-name-input', value: game.console} %>
       <%= f.input :year, as: :hidden, wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input', value: game.year} %>
+      <%= f.input :image_url, as: :hidden, wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input', value: game.image_url} %>
       <%= f.input :price_per_day,  wrapper_html: {class: "game-name-wrapper"}, label_html: {class: 'game-name-label'}, input_html: {class: 'game-name-input'} %>
       <%= f.submit 'Save game', class: 'btn btn-primary game-submit-button'%>
     <% end %>
