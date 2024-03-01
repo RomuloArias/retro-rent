@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @games = Game.all
+    @games = Game.all.sort_by(&:updated_at).reverse
     if params[:query].present?
       @games = @games.searching(params[:query])
     end

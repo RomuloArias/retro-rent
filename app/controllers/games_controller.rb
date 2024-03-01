@@ -3,12 +3,10 @@ class GamesController < ApplicationController
   before_action :set_game, only: [:show, :destroy]
 
   def index
-    @games = current_user.games
-    @games = Game.all
+    @games = current_user.games.sort_by(&:updated_at).reverse
     if params[:query].present?
       @games = @games.searching(params[:query])
     end
-
   end
 
   def new
