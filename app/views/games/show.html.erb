@@ -1,7 +1,7 @@
-    <p><%= link_to '<Back', root_path, class: "btn backbtn" %></p>
+  <p><%= link_to '<Back', root_path, class: "btn backbtn" %></p>
   <div class="row m-0 justify-content-center">
       <div class="card-game-show">
-        <h5 class="gametitles"><b> <%= @game.name %> </b></h5>
+        <h5 class="gametitles"> <%= @game.name %> </h5>
 
         <div class="row bg-white">
             <div class="col-6">
@@ -13,7 +13,7 @@
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
                                 <div class="containergrace">
-                                    <h4 ><b>About</b></h4>
+                                    <h5 >About</h5>
                                     <p></p>
                                     <div class="gameinfo">
                                       <h6><%= @game.console %></h6>
@@ -29,7 +29,7 @@
                   </div>
                   <div class="flip-card-back">
                                 <div class="containergrace">
-                                    <h4><b>Rent</b></h4>
+                                    <h5>Rent</h5>
                                     <p></p>
                                     <div class="rentform">
                                       <%= render 'bookings/form', game: @game, booking: @booking %>
@@ -43,15 +43,15 @@
         </div>
       </div>
     <div class="reviewsection">
-        <p class="gametitles"><strong>Review</strong></p>
+        <h5 class="containergrace"><strong>Review</strong></h5>
         <ul class="list-group">
           <% @game.reviews.each do |review| %>
           <li class="list-group-item"><%= review.content %></li>
           <% end %>
         </ul>
           <%= simple_form_for [@game, @review] do |f| %>
-          <%= f.input :content %>
-          <%= f.submit "Submit", class: "btn btn-primary" %>
+          <%= f.input :content, placeholder: "Leave your review here...", label: false%>
+          <%= f.submit "Submit", class: "btn btn-primary"%>
           <% end %>
     </div>
   </div>

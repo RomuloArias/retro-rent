@@ -6,6 +6,8 @@
 </div>
 
 <div class="container cards-all">
+<div class="row">
+    <div class="col-12">
   <h2 class="title-nw">Newly Added</h2>
   <div class="game-cards p-3">
     <% @games.each do |game| %>
@@ -13,5 +15,7 @@
         <%= render "games/game", game: game %>
       <% end %>
     <% end %>
+  </div>
+</div>
   </div>
 </div>
