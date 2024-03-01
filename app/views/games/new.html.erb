@@ -12,5 +12,8 @@
     <% @games&.each do |game| %>
       <%= render "games/game", game: game %>
     <% end %>
+    <% if @games&.empty? %>
+      <p>No games found</p>
+    <% end %>
   </div>
 </div>

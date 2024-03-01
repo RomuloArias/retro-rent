@@ -6,16 +6,16 @@
 </div>
 
 <div class="container cards-all">
-<div class="row">
+  <div class="row">
     <div class="col-12">
-  <h2 class="title-nw">Newly Added</h2>
-  <div class="game-cards p-3">
-    <% @games.each do |game| %>
-      <%= link_to game_path(game), class: 'card-link' do %>
-        <%= render "games/game", game: game %>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+      <h2 class="title-nw">Newly Added</h2>
+      <div class="game-cards p-3">
+        <% @games.each do |game| %>
+          <%= link_to game_path(game), class: 'card-link' do %>
+          <%= render "games/game", game: game %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

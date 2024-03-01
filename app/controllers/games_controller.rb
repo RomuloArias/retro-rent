@@ -18,11 +18,11 @@ class GamesController < ApplicationController
       response = URI.open("https://www.giantbomb.com/api/search/?api_key=8bf1a4825f3014203e646d9481076557a0352892&format=json&resources=game&query=#{@game_name}").read
       @results = JSON.parse(response, symbolize_names: true)[:results]
       @games = @results
-        .filter { |result| result[:platforms]&.map{ |p| p[:name].downcase }&.intersection(Game::CONSOLES.map(&:downcase))&.any? }
+        .filter { |result| result[:platforms]&.map{ |p| p[:name] }&.intersection(Game::CONSOLES)&.any? }
         .map do |result|
         Game.new(
           name: result[:name],
-          console: result[:platforms]&.map { |p| p[:name].downcase }.intersection(Game::CONSOLES.map(&:downcase)).first,
+          console: result[:platforms]&.map { |p| p[:name] }.intersection(Game::CONSOLES).first,
           description: result[:image][:description],
           image_url: result[:image][:original_url],
           year: result[:original_release_date].present? ? Date.parse(result[:original_release_date]).year : result[:expected_release_year]
