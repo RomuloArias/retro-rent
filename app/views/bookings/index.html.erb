@@ -6,7 +6,7 @@
         <ul class="rentalist">
             <% @bookings.each do |booking| %>
           <div class="card-product">
-            <%= image_tag "logo.png"%>
+            <%= image_tag "#{booking.game.image_url}" %>
             <div class="card-product-infos">
               <%= booking.game.name %>
               <% if booking.confirmed %>
