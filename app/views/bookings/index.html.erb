@@ -16,7 +16,9 @@
               <% end %>
               <p> Price £<%= booking.total_price %></p>
               <p>Rental dates: <%= booking.start_date %> - <%= booking.end_date %></p>
-              <li> <%= link_to "Edit", edit_booking_path(booking), class: "btn backbtn"%> </li>
+               <div class="putmiddle">
+                <li> <%= link_to "Edit", edit_booking_path(booking), class: "btn backbtn"%> </li>
+               </div>
           </div>
           </div>
             <% end %>
