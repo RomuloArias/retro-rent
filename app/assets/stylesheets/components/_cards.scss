@@ -28,7 +28,8 @@
   width: 220px;
   height: 300px;
   margin-bottom: 16px;
-  border: solid #10A19D;
+  border: dotted #540375;
+  ;
 }
 
 .card img {
@@ -39,6 +40,7 @@
   padding: 5px;
   object-fit: contain;
   padding-top: 15px;
+  border-bottom: solid  #540375;;
   background-color:  rgba(139, 139, 137, 0.225);
 }
 
@@ -60,5 +62,5 @@
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 2px 5px 0 #10A19D;
+  box-shadow: 4px 8px 0 #540375;
 }

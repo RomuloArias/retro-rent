@@ -1,18 +1,23 @@
+.card-content{
+  padding-left:10px;
+}
+
 .card-content h6 {
-  padding: 10px;
+  padding-top: 10px;
   font-size: 10px;
   color: rgba(139, 135, 135, 0.548);
 }
 
 .card-content h5 {
-  padding: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 10px;
   color: black;
   font-weight: bold;
 }
 
 .card-content h4 {
-  padding: 5px;
+  padding-bottom: 5px;
   font-size: 14px;
   color: black;
 }
