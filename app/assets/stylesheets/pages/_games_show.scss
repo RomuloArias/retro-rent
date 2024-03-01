@@ -60,7 +60,6 @@
   background-color: #540375;
   color: #10A19D;
   font-size: 13px;
-  height: 30px;
 }
 .btn:hover {
   transform: scale(1.1);
@@ -75,6 +74,18 @@
   height: 30px;
   width: 100px;
   margin-top: 10px;
+  margin-left: 20px;
+  justify-content: start;
+}
+
+.addbtn {
+  border-radius: 7%;
+  background-color: #540375;
+  color: #10A19D;
+  font-size: 13px;
+  height: 30px;
+  width: 130px;
+  margin-top: 20px;
   margin-left: 20px;
   justify-content: start;
 }
