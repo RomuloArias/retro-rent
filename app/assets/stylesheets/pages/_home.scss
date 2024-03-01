@@ -1,5 +1,43 @@
-.font-size{
+.card-content{
+  padding-left:10px;
+}
+
+.card-content h6 {
+  padding-top: 10px;
+  font-size: 10px;
+  color: rgba(139, 135, 135, 0.548);
+}
+
+.card-content h5 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 10px;
+  color: black;
+  font-weight: bold;
+}
+
+.card-content h4 {
+  padding-bottom: 5px;
+  font-size: 14px;
+  color: black;
+}
+
+
+.text-center {
+  color:white;
+  text-shadow: 8px 8px #8f8f8f;
+}
+
+.title-nw {
+  padding-left: 50px;
+  margin:auto;
+  text-shadow: 3px 3px #686868;
+}
+
+.form-action button {
+  background:none;
+}
+
+  .font-size{
 font-size: 150px;
-
-
 }
