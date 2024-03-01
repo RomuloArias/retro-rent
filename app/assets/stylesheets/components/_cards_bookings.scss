@@ -1,23 +1,54 @@
-.card-product {
-  overflow: hidden;
-  min-height: 120px;
-  width: 600px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin: 15px 0px 15px 50px;
-  border-radius: 10px;
+.backgroundgrace {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(asset_path('cover.png'));
+  min-height: 900px;
 }
 
-ul {
+.cardlistings {
+  width: 780px;
+  border-radius: 30px;
+  margin-bottom: 50px;
+  padding: 25px;
+  justify-content: center;
+}
+
+.cardlistings {
+  flex: 0 1 auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: all 0.2s ease-in-out;
+  background-color:rgba(255, 255, 255, 0.862);
+  box-shadow: 0 20px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 150px;
+  width: 600px;
+  background:white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.card-product:hover {
+  transform: scale(1.005);
+  box-shadow: 10px 8px 0 #10A19D;
+}
+
+.rentalist {
   list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-product img {
-  height: 100%;
   width: 120px;
+  height: 120px;
   object-fit: cover;
+  margin-left: 30px;
 }
 
 .card-product h2 {
@@ -35,5 +66,16 @@ ul {
 }
 
 .card-product .card-product-infos {
-  padding: 50px;
+  padding: 16px;
+}
+
+.rentaltitle {
+  color: purple;
+  font-size: large;
+  text-align: center;
+}
+
+.allignment{
+  display: flex;
+  align-items: baseline;
 }
