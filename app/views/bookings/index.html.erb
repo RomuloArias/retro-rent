@@ -8,7 +8,7 @@
           <div class="card-product">
             <%= image_tag "#{booking.game.image_url}" %>
             <div class="card-product-infos">
-              <%= booking.game.name %>
+             <h2><%= booking.game.name %></h2>
               <% if booking.confirmed %>
                 <span class="badge bg-success">confirmed</span>
               <% else %>
@@ -16,7 +16,9 @@
               <% end %>
               <p> Price £<%= booking.total_price %></p>
               <p>Rental dates: <%= booking.start_date %> - <%= booking.end_date %></p>
-              <li> <%= link_to "Edit", edit_booking_path(booking), class: "btn backbtn"%> </li>
+               <div class="putmiddle">
+                <li> <%= link_to "Edit", edit_booking_path(booking), class: "btn backbtn"%> </li>
+               </div>
           </div>
           </div>
             <% end %>
