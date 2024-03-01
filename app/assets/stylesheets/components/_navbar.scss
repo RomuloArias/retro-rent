@@ -26,8 +26,8 @@
   }
 
   .navbar-item {
-    width:50px;
-    size: 50px
+    width:60px;
+    height: 60px;
   }
 
   .form-control {
@@ -40,10 +40,11 @@
   size: 50px;
 }
 
-.serach-container i{
-  width:50px;
+#query {
+  width:400px;
   padding:5px;
   size: 50px;
+  border-radius: 30px;
 }
 
 .spacer {
@@ -51,4 +52,14 @@
   // margin-top:70px;
   height: 76px;
   margin-top: -23px;
+}
+
+.navbar-brand .logo {
+  height:50px;
+  width:60px;
+}
+
+.navbar-brand .logo2 {
+  height:50px;
+  width:200px;
 }

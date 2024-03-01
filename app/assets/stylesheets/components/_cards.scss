@@ -11,14 +11,11 @@
   padding: 16px;
 }
 
-.card-content p {
-  font-size: 12px;
-}
-
   .game-cards {
   @include flex-container;
   width: 100%;
   margin:auto;
+  padding: 50px;
 }
 
 
@@ -27,11 +24,11 @@
   background-color: white;
   border: 1px solid #e7e7e7;
   border-radius: 30px;
-  box-shadow: 0 20px 8px rgba(0,0,0,0.1);
   overflow: hidden;
   width: 220px;
   height: 300px;
   margin-bottom: 16px;
+  border: solid #10A19D;
 }
 
 .card img {
@@ -42,7 +39,7 @@
   padding: 5px;
   object-fit: contain;
   padding-top: 15px;
-  border: dotted #540375;
+  background-color:  rgba(139, 139, 137, 0.225);
 }
 
 .log-in-card {
@@ -62,5 +59,6 @@
 }
 
 .card:hover {
-  transform: scale(1.05)
+  transform: scale(1.05);
+  box-shadow: 2px 5px 0 #10A19D;
 }
