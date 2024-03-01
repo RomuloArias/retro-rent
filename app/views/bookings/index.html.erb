@@ -2,55 +2,25 @@
   <p><%= link_to '<Back', root_path, class: "btn backbtn" %></p>
   <div class="row m-0 justify-content-center">
     <div class="cardlistings">
-      <h2>Games I'm Currently Borrowing</h2>
-        <ul>
-          <% @bookings.each do |booking| %>
-        <div class="card-product">
-          <%= image_tag "#{booking.game.image_url}" %>
-          <div class="card-product-infos">
-            <%= booking.game.name %>
-            <% if booking.confirmed %>
-              <span class="badge bg-success">confirmed</span>
-            <% else %>
-            <span class="badge bg-warning">pending</span>
+      <h2 class="rentaltitle">Games Borrowing</h2>
+        <ul class="rentalist">
+            <% @bookings.each do |booking| %>
+          <div class="card-product">
+            <%= image_tag "#{booking.game.image_url}" %>
+            <div class="card-product-infos">
+              <%= booking.game.name %>
+              <% if booking.confirmed %>
+                <span class="badge bg-success">confirmed</span>
+              <% else %>
+              <span class="badge bg-warning">pending</span>
+              <% end %>
+              <p> Price £<%= booking.total_price %></p>
+              <p>Rental dates: <%= booking.start_date %> - <%= booking.end_date %></p>
+              <li> <%= link_to "Edit", edit_booking_path(booking), class: "btn backbtn"%> </li>
+          </div>
+          </div>
             <% end %>
-          <li> Price £<%= booking.total_price %></li>
-          <li>Rental dates: <%= booking.start_date %> - <%= booking.end_date %></li>
-          <li> <%= link_to "Edit", edit_booking_path(booking) %> </li>
-
-        </div>
-        </div>
-          <% end %>
         </ul>
     </div>
   </div>
 </div>
-
-
-<style>
-.backgroundgrace {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(asset_path('cover.png'));
-}
-
-.cardlistings {
-  width: 780px;
-  border-radius: 30px;
-  margin: 15px;
-  padding: 25px;
-}
-
-.cardlistings {
-  flex: 0 1 auto;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: all 0.2s ease-in-out;
-  background-color: white;
-  border: 1px solid #e7e7e7;
-  box-shadow: 0 20px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-}
-/* .cardlistings:hover {
-  transform: scale(1.005);
-  box-shadow: 10px 8px 0 #10A19D;;
-} */
-
-</style>
