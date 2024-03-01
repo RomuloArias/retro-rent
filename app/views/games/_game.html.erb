@@ -1,8 +1,8 @@
-<div class="card <%= current_page?(root_path) ? 'card-home' : 'card-new' %>">
+<div class="card d-flex flex-column justify-content-between <%= current_page?(root_path) ? 'card-home' : 'card-new' %>">
   <%= image_tag "#{game.image_url}" %>
   <div class="card-content m-3">
     <p><%= game.name %></p>
-    <p><%= game.console %></p>
+    <p class="<%= current_page?(new_game_path) ? 'mb-0' : '' %>"><%= game.console %></p>
     <% if game.price_per_day.present? %>
       <p>£<%= game.price_per_day %>/day</p>
     <% end %>
