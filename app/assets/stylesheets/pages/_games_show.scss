@@ -26,7 +26,7 @@
 .imagemario {
   height: 420px;
   margin: 30px;
-  border-radius: 7%;
+  border-radius: 20px;
   box-shadow: 0 14px 8px rgba(0,0,0,0.1);
 }
 
@@ -51,15 +51,16 @@
   transition: 0.3s;
   height: 250px;
   padding: 25px 20px;
-  border-radius: 7%;
+  border-radius: 20px;
 }
 
 // BELOW IS CSS FOR BUTTONS---------
 .btn {
   border-radius: 10%;
-  background-color: #540375;
-  color: #10A19D;
+  background-color: #10A19D;
+  color: #540375;
   font-size: 13px;
+  min-width: 30px;
 }
 .btn:hover {
   transform: scale(1.1);
@@ -68,20 +69,20 @@
 
 .backbtn {
   border-radius: 7%;
-  background-color: #540375;
-  color: #10A19D;
+  background-color: #10A19D;
+  color: #540375;
   font-size: 13px;
   height: 30px;
-  width: 100px;
-  margin-top: 10px;
+  min-width: 100px;
+  margin-top: 20px;
   margin-left: 20px;
   justify-content: start;
 }
 
 .addbtn {
-  border-radius: 7%;
-  background-color: #540375;
-  color: #10A19D;
+  border-radius: 10px;
+  background-color: #10A19D;
+  color: #540375;
   font-size: 13px;
   height: 30px;
   width: 130px;
@@ -94,9 +95,9 @@
   margin: 20px;
   font-size: 13px;
   height: 30px;
-  border-radius: 10%;
-  background-color: #540375;
-  color: #10A19D;
+  border-radius: 10px;
+  background-color: #10A19D;
+  color: #540375;
   justify-content: baseline;
 }
 
